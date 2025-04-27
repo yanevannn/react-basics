@@ -8,6 +8,9 @@ function App() {
       <Header />
       <Welcome />
       <Card />
+      <Card />
+      <Card />
+      <Card />
     </>
   );
 }
