@@ -7,8 +7,9 @@ function App() {
     <>
       <Header />
       <Welcome />
-      <Card names="Van" age={20} address="Bali"/>
-      <Card names="Yan" age={15} />
+      <Card names="Van" age={20} address="Bali" job="programmer"/>
+      <Card names="Rio" age={15} job="student"/>
+      <Card names="Koi" age={20} address="Bali"/>
     </>
   );
 }
