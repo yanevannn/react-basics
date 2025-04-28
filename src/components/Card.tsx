@@ -6,7 +6,7 @@ type ProfileCardData = {
 };
 
 const Card = (props: ProfileCardData) => {
-  const { names, age, address, job = "Not Workking" } = props;
+  const { names, age, address, job = "Not Working" } = props;
   return (
     <>
       <div className="card">
