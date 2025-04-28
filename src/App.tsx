@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Welcome from "./components/Welcome";
 import Card from "./components/Card";
+import Counter from "./components/Counter";
 
 type PersonData = {
   name: string;
@@ -17,19 +18,19 @@ const PersonDatas: PersonData[] = [
     age: 25,
     address: "Bali",
     job: "Programmer",
-    key: 1
+    key: 1,
   },
   {
     name: "Rio",
     age: 21,
     job: "Student",
-    key:2
+    key: 2,
   },
   {
     name: "Koi",
     age: 20,
     address: "Jawa",
-    key:3
+    key: 3,
   },
 ];
 
@@ -49,6 +50,7 @@ function App() {
           />
         );
       })}
+      <Counter />
     </>
   );
 }
