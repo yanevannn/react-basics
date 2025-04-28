@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useCounter } from "../hooks/useCounter";
 
 const Counter = () => {
-  // [state, function to update state] = state value using useState Hook
-  const [counter, setCounter] = useState(0);
-  const [name, setName] = useState("Evan"); // another example state
+  // Use custom hook for cleaner and more organized code
+  const { counter, handlePlusCounter, handleMinusCounter, handleResetCounter } =useCounter();
 
+  // [state, function to update state] = state value using useState Hook
+  const [name, setName] = useState("Evan"); // another example state
   // Function to toggle the [State] name between "Evan" and "Yan Evan"
   const handleChangeName = () => {
     if (name === "Evan") {
@@ -12,21 +14,6 @@ const Counter = () => {
     } else {
       setName("Evan");
     }
-  };
-
-  // Function to increment the counter value
-  const handlePlusCounter = () => {
-    setCounter(counter + 1);
-  };
-
-  // Function to dencrement the counter value
-  const handleMinusCounter = () => {
-    setCounter(counter - 1);
-  };
-
-  // Function to reset the counter value to 0
-  const handleResetCounter = () => {
-    setCounter(0);
   };
 
   // Return component for rendering UI
