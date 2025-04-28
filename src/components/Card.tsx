@@ -1,11 +1,15 @@
 const Card = () => {
+  const name: string = "Vann";
+  const age: number = 10;
+  const addres: string = "Indonesia";
+
   return (
     <>
-    <div className="card">
-      <h4>My Names John</h4>
-      <p>20 year</p>
-      <p> from USA</p>
-    </div>
+      <div className="card">
+        <h4>My Names {name}</h4>
+        <p>{age} year</p>
+        <p>from {addres}</p>
+      </div>
     </>
   );
 };
