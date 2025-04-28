@@ -7,10 +7,8 @@ function App() {
     <>
       <Header />
       <Welcome />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      <Card names="Van" age={20} address="Bali"/>
+      <Card names="Yan" age={15} />
     </>
   );
 }
