@@ -1,57 +1,22 @@
-import Header from "./components/Header";
-import Welcome from "./components/Welcome";
-import Card from "./components/Card";
-import Counter from "./components/Counter";
-
-type PersonData = {
-  name: string;
-  age: number;
-  address?: string;
-  job?: string;
-  key: number;
-};
-
-// example data array object
-const PersonDatas: PersonData[] = [
-  {
-    name: "Van",
-    age: 25,
-    address: "Bali",
-    job: "Programmer",
-    key: 1,
-  },
-  {
-    name: "Rio",
-    age: 21,
-    job: "Student",
-    key: 2,
-  },
-  {
-    name: "Koi",
-    age: 20,
-    address: "Jawa",
-    key: 3,
-  },
-];
+import { Routes, Route } from "react-router";
+import HomePage from "./pages/HomePage";
+import ProfilePage from "./pages/ProfilePage";
+import ProfileDetailPage from "./pages/ProfileDetailPage";
+import ErorPage from "./pages/ErorPage";
 
 function App() {
   return (
-    <>
-      <Header />
-      <Welcome />
-      {PersonDatas.map((PersonData) => {
-        return (
-          <Card
-            names={PersonData.name}
-            age={PersonData.age}
-            address={PersonData.address}
-            job={PersonData.job}
-            key={PersonData.key}
-          />
-        );
-      })}
-      <Counter />
-    </>
+    <Routes>
+      {/* Static Routes */}
+      <Route path="/" element={<HomePage />} />
+      <Route path="/profiles" element={<ProfilePage />} />
+
+      {/* Dynamic Route using param ( :params ) */}
+      <Route path="/profile/:username" element={<ProfileDetailPage />} />
+
+      {/* Not Found Route */}
+      <Route path="*" element={<ErorPage />} />
+    </Routes>
   );
 }
 

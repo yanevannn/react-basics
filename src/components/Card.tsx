@@ -1,21 +1,20 @@
 type ProfileCardData = {
-  names: string;
-  age: number;
-  address?: string; //optional props add ( ? )
-  job?: string;
+  username: string;
+  name: string;
+  age?: number;
+  description: string; //optional props add ( ? )
 };
 
 const Card = (props: ProfileCardData) => {
-  const { names, age, address, job = "Not Working" } = props;
+  const { username, name, age, description } = props;
   return (
     <>
       <div className="border-1 p-5 rounded-xl inline-block h-40 m-3">
-        <div className="flex flex-col">
-          <h4 className="font-bold">My Names {names}</h4>
-          <p>{age} year</p>
-          {/* conditional rendering by value props 👇🏻 (if ternary)*/}
-          {address ? <p>from {address}</p> : null}
-          <p>{job}</p>
+        <div className="flex flex-col text-center">
+          <h4 className="font-bold">{name}</h4>
+          <p>@{username}</p>
+          {age ? <p className="font-semibold text-sm">{age} Years</p> : <p className="font-semibold text-sm text-red-500">Private</p>}
+          <p>{description}</p>
         </div>
       </div>
     </>
